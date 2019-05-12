@@ -1,0 +1,40 @@
+spring:
+  profiles: dev
+    active: zyfcms-eurekaServer-config
+
+
+server:
+  port: 8400
+
+eureka:
+  instance:
+    hostname: eureka8400.com   #指定Eureka主机
+  client:
+    register-with-eureka: false #指定当前主机是否需要向注册中心注册（不用，因为当前主机是server，不是client）
+    fetch-registry: false  # 指定当前主机是否需要获取注册信息（不用，因为当前主机是Server， 不是client）
+
+    service-url: # 暴露服务中心地址
+      defaltZone: http://${eureka.instance.hostname}:${server.port}/eureka
+      #defaltZone: http://localhost:8000/eureka
+
+---
+# 配置test 环境
+spring:
+  profiles: test
+    active: zyfcms-eurekaServer-config
+
+
+server:
+  port: 8500
+
+eureka:
+  instance:
+    hostname: eureka8500.com   #指定Eureka主机
+  client:
+    register-with-eureka: false #指定当前主机是否需要向注册中心注册（不用，因为当前主机是server，不是client）
+    fetch-registry: false  # 指定当前主机是否需要获取注册信息（不用，因为当前主机是Server， 不是client）
+
+    service-url: # 暴露服务中心地址
+      defaltZone: http://${eureka.instance.hostname}:${server.port}/eureka
+      #defaltZone: http://localhost:8000/eureka
+
