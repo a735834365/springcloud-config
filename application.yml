@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: dev
+
+---
+# 开发环境
+spring:
+  # 指定当前微服务对象（提供者）暴露的名称
+  application:
+    name: zyfmsc-config-depart
+  profiles: dev
+
+---
+
+# 测试环境
+spring:
+  # 指定当前微服务对象（提供者）暴露的名称
+  application:
+    name: zyfmsc-config-depart
+  profiles: test
